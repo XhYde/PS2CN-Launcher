@@ -1,0 +1,93 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="ENLocaleVersion" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ENClientLocation" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Games\PlanetSide 2\PlanetSide2_x64.exe</Value>
+    </Setting>
+    <Setting Name="PingServer" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="CheckedCN" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Checked32bit" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CheckedENVoice" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ClientType" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="TESTLocaleVersion" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TESTClientLLocation" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Games\PlanetSide 2 Test\PlanetSide2_x64.exe</Value>
+    </Setting>
+    <Setting Name="KORLocaleVersionEN" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="KORClientLLocation" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Games\PlanetSide 2 KOR\PlanetSide2_x64.exe</Value>
+    </Setting>
+    <Setting Name="RULocaleVersionEN" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RUClientLLocation" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Games\PlanetSide 2 RU\PlanetSide2_x64.exe</Value>
+    </Setting>
+    <Setting Name="KORLocaleVersionKOR" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RULocaleVersionRU" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TimeZone1" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="TimeZone2" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="TimeZone3" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">12</Value>
+    </Setting>
+    <Setting Name="TimeHour" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">6</Value>
+    </Setting>
+    <Setting Name="CheckedDST1" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CheckedDST2" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CheckedDST3" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TimeSelection" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="FunctionSelector" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.Byte" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="FontSelector" Provider="PS2CN_Launcher.PortableSettingsProvider" Roaming="true" Type="System.String" Scope="User">
+      <Value Profile="(Default)">使用默认字体</Value>
+    </Setting>
+    <Setting Name="CheckedAutoRestore" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CheckedShowFunctionUI" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="STEAMClientLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Games\Steam\SteamApps\common\PlanetSide 2\PlanetSide2_x64.exe</Value>
+    </Setting>
+    <Setting Name="STEAMLocaleVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
