@@ -3,7 +3,7 @@ Imports System.Net.NetworkInformation      'process类，用于获得系统进�
 
 Public Class LauncherForm1
 
-    Const Version As UInt32 = 20181206      '软件版本号，日期。每次【更新】记得【修改】！
+    Const Version As UInt32 = 20181215      '软件版本号，日期。每次【更新】记得【修改】！
 
     '切勿使用Power Packs内的图形控件！！！
 
@@ -1147,6 +1147,8 @@ Public Class LauncherForm1
 
             Dim verHttpTimeout As New TimeSpan(0, 0, 15)     '设定TimeSpan格式，0时0分10秒
             verHttpClient.Timeout = verHttpTimeout            '将HttpClient的超时时间设为上行的值
+
+            verHttpClient.DefaultRequestHeaders.Add("User-Agent", "Chrome")
 
             verStream = Await verHttpClient.GetStreamAsync("http://tieba.baidu.com/p/3594739603")
             ' Get the stream containing content returned by the server.
@@ -2320,11 +2322,12 @@ Public Class LauncherForm1
         Dim zhdatStream As MemoryStream = Nothing           '使用内置资源流
         Dim endatStream As FileStream = Nothing             '以FileStream文件流形式打开dat，dir
         Dim endirStream As FileStream = Nothing
-        Dim zhdatBinReader As BinaryReader = Nothing     '二进制读取dat文件
+        Dim zhdatBinReader As BinaryReader = Nothing        '二进制读取dat文件
         Dim endatBinWriter As BinaryWriter = Nothing        '二进制模式写入endat文件
         Dim endirWriter As StreamWriter = Nothing           '文本模式写入endir文件
         Dim zhdatPosition As Long = 0           '记录dat文件头位置
-        Dim zhdatPointer As Byte = Nothing      '二进制读取zhdat，得到的一字节8位
+        Dim zhdatCharPointer As Char = Nothing      '二进制读取zhdat，得到的一字符Char 16位 0到65535
+        Dim zhdatBytePointer As Byte = Nothing      '二进制读取zhdat，得到的一字节Byte 8位 -128到127
         Dim zhdatString As String = Nothing     '用于写入的临时字符串
         Dim endirStart As UInteger = 3      'dir中的起始位
         Dim endirOffset As Short = 0        'dir中的字符串长度（偏移量）
@@ -2359,46 +2362,78 @@ Public Class LauncherForm1
             endirStream = New FileStream(launchPad.DirectoryName & "\Locale" & runCNDataName & ".dir", FileMode.Create, FileAccess.Write)
             endirWriter = New StreamWriter(endirStream)
 
+
+            '读取zhdat文件头3个字符，写入endat
             Do Until (zhdatBinReader.PeekChar = &H23)   'endat读取文件头十六进制字符&H EF BB BF，直到行首为##，再开始读入dir。
                 endatBinWriter.Write(zhdatBinReader.ReadByte())
             Loop
             endatBinWriter.Flush()
 
-            zhdatPointer = zhdatBinReader.ReadByte      '由于循环顺序原因，手动读入第一个#
+
+            '将zhdat的10行 ## 起始的注释语句写入endir头部。
+            zhdatBytePointer = zhdatBinReader.ReadByte      '由于循环顺序原因，手动读入第一个#
             Do      '将dat从##开始读取，写入dir头部，读到回车后下一行没有##为止。
-                zhdatString &= Chr(zhdatPointer)    '将读入字符加入流中
-                zhdatPointer = zhdatBinReader.ReadByte  '从dat读一个字节(8位2进制)，文件指针向后移动
-            Loop Until (zhdatPointer = &HA AndAlso zhdatBinReader.PeekChar <> &H23)     'dir头部，读到十六进制换行符&H0A，判断下一行首字符是否为#
+                zhdatString &= Chr(zhdatBytePointer)    '将读入字符加入流中
+                zhdatBytePointer = zhdatBinReader.ReadByte  '从dat读一个字节(8位2进制)，文件指针向后移动
+            Loop Until (zhdatBytePointer = &HA AndAlso zhdatBinReader.PeekChar <> &H23)     'dir头部，读到十六进制换行符&H0A，判断下一行首字符是否为#
             endirWriter.Write(zhdatString)    '将文件头写入dir
             endirWriter.Flush()       '将缓冲区内容写入流……不用这命令就不会实际执行写入艹……
             zhdatString = Nothing     'String写入文件后，不会自动清空，跟C++不同…… String空值为Nothing
 
+
+            '读取zhdat ## 之后的正文部分，完整写入endat
             zhdatPosition = zhdatStream.Position    '记住zhdat流指针位置，此处为dat正文起始处
             Do While zhdatBinReader.PeekChar >= 0   '读取zhdat正文，写入endat
-                endatBinWriter.Write(zhdatBinReader.ReadChar)   '由于是读取char，因而无法并入下面dir计算，dir计数需要读取byte
+
+                zhdatCharPointer = zhdatBinReader.ReadChar      '由于是读取char，因而无法并入下面dir计算，dir计数需要读取byte
+
+                Select Case zhdatCharPointer
+                    'zhdat中，将0D作为一句词条的结尾判断符，而0A是每一行的换行符。写入endat时，将所有0A增补为0D 0A；而原文0D在写入时做忽略处理。
+
+                    Case Chr(13)        '遇到0D符号，直接跳过本字符，不写入endat，继续读取下一个字符
+
+                    Case Chr(10)        '遇到0A符号，视作行结尾，写入endat时增补为0D 0A
+                        endatBinWriter.Write(Chr(13))   '将0D写入endat
+                        endatBinWriter.Write(Chr(10))
+                    Case Else
+                        endatBinWriter.Write(zhdatCharPointer)   '将当前字符写入endat
+                End Select
+
             Loop
-            endatBinWriter.Flush()
+            endatBinWriter.Flush()      '将缓冲区内容写入流……不用这命令就不会实际执行写入艹……
             zhdatStream.Position = zhdatPosition    '重新定位回zhdat正文起始处
 
+
+            '回到zhdat正文开头位置，开始计算并写入endir
             Do      '从zhdat正文起始处，正式开始计算dir
-                If (zhdatPointer <> 9 AndAlso endir1stTab) Then    '读取条目编号，读到第一个制表符ASCII=9，&H9之前，
-                    zhdatString &= Chr(zhdatPointer)        '将dat文本条目编号，写入dir第一列。
-                ElseIf (zhdatPointer = 9 AndAlso endir1stTab) Then    '读到第一个制表符&H9，
+                If (zhdatBytePointer <> 9 AndAlso endir1stTab) Then    '读取条目编号，读到第一个制表符ASCII=9，&H9之前，
+                    zhdatString &= Chr(zhdatBytePointer)        '将dat文本条目编号，写入dir第一列。
+                ElseIf (zhdatBytePointer = 9 AndAlso endir1stTab) Then    '读到第一个制表符&H9，
                     endir1stTab = False   '标示符改为0，第一个制表符之后已经不是编号了，无需读取。
-                ElseIf (zhdatPointer = 13) Then   '读到&H0D，dat的真正条目结尾标示
-                    zhdatString &= Chr(9) & CStr(endirStart) & Chr(9) & CStr(endirOffset - 1) & Chr(9) & "d" & Chr(13) & Chr(10)
-                    '将第二列start、第三列offset和第四列"d"加入字符串
+                ElseIf (zhdatBytePointer = 13) Then   '读到&H0D，是zhdat一句词条的真正结尾标示
+                    zhdatString &= Chr(9) & endirStart & Chr(9) & endirOffset & Chr(9) & "d" & Chr(13) & Chr(10)
+                    '将第二列start、第三列offset和第四列"d"加入字符串，最后0D 0A换行。整句结尾的0D0A不计入offset字符数，但读到0D时计数忽略，因而offset计数截止0D前一位。
                     endirWriter.Write(zhdatString)  '将行写入dir
                     endirWriter.Flush()     'write命令必须要flush才会写入文件…… 不然不写入就被下一行清空了……
                     zhdatString = Nothing   '手动清空字符串
-                    endirStart += endirOffset + 1
+                    endirStart += endirOffset + 2   '新一句的起始位，由上一句Start加上offset，再加上未计数的0D和最后一位0A。
                     endirOffset = 0       '重置单行字符数
                     endir1stTab = True        '进入下一行，重置首列标示符
-                    zhdatPointer = zhdatBinReader.ReadByte()     '0D后面还有一位0A，dir无需读入
+                    zhdatBytePointer = zhdatBinReader.ReadByte()     '0D后面还有一位0A，dir无需计入，手动往后空读一位
                 End If
-                zhdatPointer = zhdatBinReader.ReadByte
-                endirOffset += 1
+
+                zhdatBytePointer = zhdatBinReader.ReadByte
+
+                Select Case zhdatBytePointer
+                    Case 10         'zhdat中的0A结尾，写入endat后都会增补为0D 0A，因而遇到0A就将offset计数+2
+                        endirOffset += 2
+                    Case 13         '由于逢0A计数就+2，所以0D需要被忽略，不计数
+
+                    Case Else       '一般情况下，读1字节，计数+1
+                        endirOffset += 1    '将本byte计入endir
+                End Select
             Loop
+
 
         Catch errcode As EndOfStreamException
             '检查是否读到文件结束
