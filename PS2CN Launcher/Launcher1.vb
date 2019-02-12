@@ -5,6 +5,8 @@ Public Class LauncherForm1
 
     Const Version As UInt32 = 20190114      '软件版本号，日期。每次【更新】记得【修改】！
 
+    '每次更新后，github先提交【更改】，再【同步】到服务器
+
     '切勿使用Power Packs内的图形控件！！！
 
     Const fontCNKOR As String = "\msyh_RixMGoM.ttf"     '设定韩文客户端字体常量，用合成字体，前置目录为汉化器目录
