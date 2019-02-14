@@ -45,15 +45,15 @@
 ![image](https://github.com/XhYde/PS2CN-Launcher/blob/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%966.png)
   
 3. `【初次使用或更新时】`：运行安装包.exe，将PS2CN汉化器安装（解压缩）至你希望存放的【任意位置】。（安装后即可使用）  
-![image](https://github.com/XhYde/PS2CN-Launcher/blob/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%967.png) ![image](https://github.com/XhYde/PS2CN-Launcher/blob/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%968.png)
+![image](https://github.com/XhYde/PS2CN-Launcher/raw/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%967.png) ![image](https://github.com/XhYde/PS2CN-Launcher/raw/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%968.png)
   
 4. `【每次游戏前】`：运行PS2CN汉化器.exe。  
 (每次游戏前都需要根据提示手动汉化，无法一劳永逸。因为游戏官方登陆器【每次】登陆账号后，会校验客户端文件完整性，并【修复】任何修改过的文件，包括因汉化而修改的语言文件。)  
   
 5. `【按需选择】`：左下角【选择】适用【客户端类型】(Steam版、官方版、测试服等)。
-![image](https://github.com/XhYde/PS2CN-Launcher/blob/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%969.png)
+![image](https://github.com/XhYde/PS2CN-Launcher/raw/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%969.png)
   
-6. `【仅初次使用时】`：【点击】底部地址栏，选择【客户端位置】(PlanetSide2_x64.exe 或 PlanetSide2.exe)。
+6. `【仅初次使用时】`：【点击】底部地址栏，选择【客户端位置】(PlanetSide2_x64.exe 或 PlanetSide2.exe)。  
 **Steam版用户可忽略此步骤。**  
   
 7. `【按需选择】`：底部选择所需功能。  
@@ -62,7 +62,7 @@
   
 8. `【每次游戏前】`：**看提示！_看提示_！看提示！**  
 根据右下方【_**橙金闪烁提示**_】，【依次】点击右下角【按钮】，汉化修改客户端。  
-![image](https://github.com/XhYde/PS2CN-Launcher/blob/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%9610.png) ![image](https://github.com/XhYde/PS2CN-Launcher/blob/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%9611.png) ![image](https://github.com/XhYde/PS2CN-Launcher/blob/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%9612.png)  
+![image](https://github.com/XhYde/PS2CN-Launcher/raw/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%9610.png) ![image](https://github.com/XhYde/PS2CN-Launcher/raw/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%9611.png) ![image](https://github.com/XhYde/PS2CN-Launcher/blob/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%9612.png)  
 仅当客户端按钮变为【PLAY】，绿色进度条填满，且Autoplay选项消失时，客户端才算完整更新验证。
 此时汉化器可以开始修改客户端。  
 ![image](https://github.com/XhYde/PS2CN-Launcher/blob/master/Readme%20pic/ps2cn%E6%B1%89%E5%8C%96%E5%99%A8%E5%8F%91%E5%B8%83%E5%B8%9613.png)  
@@ -172,7 +172,7 @@ V·P·N国内外【流量分流】工具。
 ## 常见问题
 **网吧玩家如果汉化后中文字体出错，显示为圆圈中一个×，推测是网吧系统的问题，将汉化修改过的中文字体给还原成了英文字体而导致的**。此问题估计与汉化无关，请找网吧帮忙解决。  
   
-若美服更新后汉化滞后，新文本显示错误，可暂时【取消勾选】“启用汉化”，并将字体设置为“使用默认字体”，即可用【英文原版】进行游戏。  
+若美服更新后汉化滞后，新文本显示错误，可将“是否汉化”下拉菜单改为【英文原版】，并将字体设置为“使用默认字体”，即可用【英文原版】进行游戏。  
   
 在自定义游戏字体功能中，**选用中文字体后，在【游戏聊天】中可【显示中文】**。点击【开始修改】后才生效。  
 **修改字体功能独立于汉化**，即可以选择使用【英文原版】进入游戏，仅将字体修改成中文字体。  
@@ -235,7 +235,7 @@ DayBreak官方关于修改客户端及使用Recursion插件的合法性说明：
 中国、韩国和俄罗斯服务器已终止运营。  
   
 6. 若【美服】版本更新而汉化滞后，旧的汉化文本可能与新版实际游戏内容【不符】，包括因【商品更新】导致的翻译【不符】。  
-建议【暂时】使用【英文原版】进行游戏(【取消勾选】“启用汉化”)。  
+建议【暂时】使用【英文原版】进行游戏（将【进行汉化】改为【英文原版】）。  
 若使用旧版汉化，请知晓可能存在的【问题】并【自行承担后果】。  
   
 7. 汉化文本，基于最新版【美服】和【测试服】制作。【尽可能】保证翻译准确。  
