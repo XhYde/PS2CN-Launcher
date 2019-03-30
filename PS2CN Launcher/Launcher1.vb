@@ -3,7 +3,7 @@ Imports System.Net.NetworkInformation      'process类，用于获得系统进�
 
 Public Class LauncherForm1
 
-    Const Version As UInt32 = 20190114      '软件版本号，日期。每次【更新】记得【修改】！
+    Const Version As UInt32 = 20190329      '软件版本号，日期。每次【更新】记得【修改】！
 
     '每次更新后，github先提交【更改】，再【同步】到服务器
 
@@ -3566,7 +3566,7 @@ Public Class LauncherForm1
 
     Private Sub LabelLogo_Click(sender As Object, e As EventArgs) Handles LabelLogo.Click
         Try
-            Process.Start("http://ngabbs.com/read.php?tid=15620686")
+            Process.Start("https://github.com/XhYde/PS2CN-Launcher/wiki")
             '打开浏览器，访问论坛
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation, "VisitPS2CN Error")
