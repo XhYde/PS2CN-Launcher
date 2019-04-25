@@ -275,7 +275,7 @@ Partial Class LauncherForm1
         Me.LabelLogo.Name = "LabelLogo"
         Me.LabelLogo.Size = New System.Drawing.Size(288, 112)
         Me.LabelLogo.TabIndex = 35
-        Me.ToolTip1.SetToolTip(Me.LabelLogo, "PS2CN.com已退役，现改在NGA论坛发布。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(· ω·)つ【珍爱智商，远离贴吧】")
+        Me.ToolTip1.SetToolTip(Me.LabelLogo, "PS2CN.com已退役，现改在Github发布。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(· ω·)つ【珍爱智商，远离贴吧】")
         '
         'CheckBox32bit
         '
