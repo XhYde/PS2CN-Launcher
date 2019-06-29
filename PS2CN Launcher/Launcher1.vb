@@ -3,7 +3,7 @@ Imports System.Net.NetworkInformation      'process类，用于获得系统进�
 
 Public Class LauncherForm1
 
-    Const Version As UInt32 = 20190504      '软件版本号，日期。每次【更新】记得【修改】！
+    Const Version As UInt32 = 201906291      '软件版本号，8位日期 + 1位版本。每次【更新】记得【修改】！
 
     '每次更新后，github先提交【更改】，再【同步】到服务器
 
@@ -654,9 +654,10 @@ Public Class LauncherForm1
     Private Sub LauncherForm1ShowTitle(Optional CheckVersion As String = "")
         '修改总窗体顶部的文字标题
         Me.Text = "行星边际2 PS2CN汉化器 - " _
-                & Version \ 10000 & "." _
-                & (Version Mod 10000) \ 100 & "." _
-                & Version Mod 100 _
+                & Version \ 100000 & "." _
+                & (Version Mod 100000) \ 1000 & "." _
+                & (Version Mod 1000) \ 10 & ".ver" _
+                & Version Mod 10 _
                 & IIf(CheckVersion = "", "", "  " & CheckVersion)
         '读取version常量，显示版本号
         '最后依据输入字符串变量CheckVersion，显示检查版本信息
@@ -1152,7 +1153,7 @@ Public Class LauncherForm1
 
             verHttpClient.DefaultRequestHeaders.Add("User-Agent", "Chrome")
 
-            verStream = Await verHttpClient.GetStreamAsync("http://tieba.baidu.com/p/3594739603")
+            verStream = Await verHttpClient.GetStreamAsync("http://ps2cn.lofter.com/")
             ' Get the stream containing content returned by the server.
             verStreamReader = New StreamReader(verStream, System.Text.Encoding.GetEncoding("utf-8"))
             ' Open the stream using a StreamReader for easy access.
@@ -1164,15 +1165,21 @@ Public Class LauncherForm1
             '百度贴吧版本更新帖网页格式如下：
             '2楼内容例：版本号20150220。
             '此处以“版本号”作为搜索符。“版本号”之后，第一个“2”起始，查找8位字符（数字）。
+            'If verResponseString.Contains("版本号") Then
+            '    verResponseString = verResponseString.Remove(0, verResponseString.IndexOf("版本号") + 3)
+            '    latestVersion = Val(verResponseString.Substring(verResponseString.IndexOf("2"), 8))
+
+            '改用github项目下wiki页作为版本号记录
             If verResponseString.Contains("版本号") Then
                 verResponseString = verResponseString.Remove(0, verResponseString.IndexOf("版本号") + 3)
-                latestVersion = Val(verResponseString.Substring(verResponseString.IndexOf("2"), 8))
+                latestVersion = Val(verResponseString.Substring(verResponseString.IndexOf("2"), 9))
+
                 If latestVersion > Version Then
 
                     LauncherForm1ShowTitle("有更新")
                     '修改主窗体标题栏，更新版本状态
 
-                    LabelUpdate.Text = "汉化器版本有更新！最新版：" & latestVersion & "。" _
+                    LabelUpdate.Text = "汉化器版本有更新！最新版：" & latestVersion \ 10 & ".ver" & (latestVersion Mod 10) & "。" _
                     & Chr(13) & Chr(10) & "点击访问汉化发布页。"
                     'LabelUpdate.Text = "汉化器版本有更新！最新版：" _
                     '& IIf(1, verResponseString.Substring(verResponseString.IndexOf("。<br>") + 5, verResponseString.IndexOf("<")), "") _
@@ -1185,6 +1192,7 @@ Public Class LauncherForm1
 
                     'LabelUpdate.Text = "汉化器已是最新版本。"
                 End If
+
             End If
 
             ToolTip1.SetToolTip(LabelUpdate, "点击访问汉化发布页。")
@@ -4399,4 +4407,7 @@ Public Class LauncherForm1
         LabelTestDisplay2.Visible = True
     End Sub
 
+    Private Sub LabelPlayerName_Click(sender As Object, e As EventArgs) Handles LabelPlayerName.Click
+
+    End Sub
 End Class

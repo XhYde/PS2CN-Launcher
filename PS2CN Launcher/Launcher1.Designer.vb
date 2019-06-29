@@ -1276,7 +1276,7 @@ Partial Class LauncherForm1
         Me.TextBoxPlayerName.BackColor = System.Drawing.Color.FromArgb(CType(CType(4, Byte), Integer), CType(CType(19, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.TextBoxPlayerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBoxPlayerName.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.TextBoxPlayerName.ForeColor = System.Drawing.Color.Gold
+        Me.TextBoxPlayerName.ForeColor = System.Drawing.Color.Silver
         Me.TextBoxPlayerName.Location = New System.Drawing.Point(3, 82)
         Me.TextBoxPlayerName.Name = "TextBoxPlayerName"
         Me.TextBoxPlayerName.Size = New System.Drawing.Size(140, 21)
