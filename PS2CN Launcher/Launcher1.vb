@@ -3,7 +3,7 @@ Imports System.Net.NetworkInformation      'process类，用于获得系统进�
 
 Public Class LauncherForm1
 
-    Const Version As UInt32 = 201907081      '软件版本号，8位日期 + 1位版本。每次【更新】记得【修改】！
+    Const Version As UInt32 = 201907291      '软件版本号，8位日期 + 1位版本。每次【更新】记得【修改】！
 
     '每次更新后，github先提交【更改】，再【同步】到服务器
 
