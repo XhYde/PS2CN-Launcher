@@ -103,6 +103,16 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
+        Friend ReadOnly Property Steam_note_full() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Steam_note_full", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
         Friend ReadOnly Property VB_bg_ButtonStatDesc() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("VB_bg_ButtonStatDesc", resourceCulture)

@@ -133,9 +133,9 @@ Partial Class LauncherForm1
         Me.LabelDir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LabelDir.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LabelDir.ForeColor = System.Drawing.Color.Gold
-        Me.LabelDir.Location = New System.Drawing.Point(1, 4)
+        Me.LabelDir.Location = New System.Drawing.Point(0, 4)
         Me.LabelDir.Name = "LabelDir"
-        Me.LabelDir.Size = New System.Drawing.Size(444, 21)
+        Me.LabelDir.Size = New System.Drawing.Size(335, 21)
         Me.LabelDir.TabIndex = 4
         Me.LabelDir.Text = "Steam://rungameid/218230"
         Me.LabelDir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -149,7 +149,7 @@ Partial Class LauncherForm1
         Me.ButtonOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonOpenFile.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.ButtonOpenFile.ForeColor = System.Drawing.Color.Black
-        Me.ButtonOpenFile.Location = New System.Drawing.Point(421, 6)
+        Me.ButtonOpenFile.Location = New System.Drawing.Point(312, 6)
         Me.ButtonOpenFile.Name = "ButtonOpenFile"
         Me.ButtonOpenFile.Size = New System.Drawing.Size(21, 17)
         Me.ButtonOpenFile.TabIndex = 3
@@ -209,19 +209,17 @@ Partial Class LauncherForm1
         Me.LabelSteam.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelSteam.BackColor = System.Drawing.Color.Transparent
         Me.LabelSteam.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LabelSteam.Enabled = False
         Me.LabelSteam.ForeColor = System.Drawing.Color.Gold
         Me.LabelSteam.Image = Global.PS2CN_Launcher.My.Resources.Resources.VB_bg_SteamHelpIcon
         Me.LabelSteam.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.LabelSteam.Location = New System.Drawing.Point(349, 337)
+        Me.LabelSteam.Location = New System.Drawing.Point(342, 5)
         Me.LabelSteam.MinimumSize = New System.Drawing.Size(103, 19)
         Me.LabelSteam.Name = "LabelSteam"
         Me.LabelSteam.Size = New System.Drawing.Size(103, 19)
         Me.LabelSteam.TabIndex = 40
         Me.LabelSteam.Text = "    Steam版位置"
         Me.LabelSteam.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ToolTip1.SetToolTip(Me.LabelSteam, "点击查看Steam版客户端路径选取方法。")
-        Me.LabelSteam.Visible = False
+        Me.ToolTip1.SetToolTip(Me.LabelSteam, "点击查看Steam版客户端默认存储位置。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Steam版测试服也在同一个库目录下。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Steam版客户端默认自动检测客户端位置，" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "如无问题，无需手动选择。")
         '
         'Timer1
         '
@@ -813,7 +811,7 @@ Partial Class LauncherForm1
         Me.LabelManuallyTranslate.AutoSize = True
         Me.LabelManuallyTranslate.BackColor = System.Drawing.Color.Transparent
         Me.LabelManuallyTranslate.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.LabelManuallyTranslate.Location = New System.Drawing.Point(300, 384)
+        Me.LabelManuallyTranslate.Location = New System.Drawing.Point(301, 382)
         Me.LabelManuallyTranslate.Name = "LabelManuallyTranslate"
         Me.LabelManuallyTranslate.Size = New System.Drawing.Size(152, 17)
         Me.LabelManuallyTranslate.TabIndex = 54
@@ -827,7 +825,7 @@ Partial Class LauncherForm1
         Me.LabelKillLaunchPad.AutoSize = True
         Me.LabelKillLaunchPad.BackColor = System.Drawing.Color.Transparent
         Me.LabelKillLaunchPad.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.LabelKillLaunchPad.Location = New System.Drawing.Point(288, 384)
+        Me.LabelKillLaunchPad.Location = New System.Drawing.Point(289, 382)
         Me.LabelKillLaunchPad.Name = "LabelKillLaunchPad"
         Me.LabelKillLaunchPad.Size = New System.Drawing.Size(164, 17)
         Me.LabelKillLaunchPad.TabIndex = 55
@@ -841,7 +839,7 @@ Partial Class LauncherForm1
         Me.LabelKillGameClient.AutoSize = True
         Me.LabelKillGameClient.BackColor = System.Drawing.Color.Transparent
         Me.LabelKillGameClient.Font = New System.Drawing.Font("微软雅黑", 9.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.LabelKillGameClient.Location = New System.Drawing.Point(285, 384)
+        Me.LabelKillGameClient.Location = New System.Drawing.Point(289, 382)
         Me.LabelKillGameClient.Name = "LabelKillGameClient"
         Me.LabelKillGameClient.Size = New System.Drawing.Size(164, 17)
         Me.LabelKillGameClient.TabIndex = 56
@@ -1174,6 +1172,7 @@ Partial Class LauncherForm1
         Me.PanelSelectClientTypeDir.BackColor = System.Drawing.Color.Transparent
         Me.PanelSelectClientTypeDir.Controls.Add(Me.ComboBoxCN)
         Me.PanelSelectClientTypeDir.Controls.Add(Me.PanelDir)
+        Me.PanelSelectClientTypeDir.Controls.Add(Me.LabelSteam)
         Me.PanelSelectClientTypeDir.Controls.Add(Me.LabelSplitLine)
         Me.PanelSelectClientTypeDir.Controls.Add(Me.PanelComboBoxFontSelector)
         Me.PanelSelectClientTypeDir.Controls.Add(Me.ComboBoxClientType)
@@ -1197,7 +1196,7 @@ Partial Class LauncherForm1
         Me.PanelDir.ForeColor = System.Drawing.Color.LightSeaGreen
         Me.PanelDir.Location = New System.Drawing.Point(0, 1)
         Me.PanelDir.Name = "PanelDir"
-        Me.PanelDir.Size = New System.Drawing.Size(445, 25)
+        Me.PanelDir.Size = New System.Drawing.Size(335, 25)
         Me.PanelDir.TabIndex = 54
         Me.PanelDir.Visible = False
         '
@@ -1291,7 +1290,6 @@ Partial Class LauncherForm1
         Me.ClientSize = New System.Drawing.Size(720, 464)
         Me.Controls.Add(Me.LabelKillGameClient)
         Me.Controls.Add(Me.LabelKillLaunchPad)
-        Me.Controls.Add(Me.LabelSteam)
         Me.Controls.Add(Me.LabelManuallyTranslate)
         Me.Controls.Add(Me.ComboBoxFunctionSelector)
         Me.Controls.Add(Me.CheckBoxENVoice)

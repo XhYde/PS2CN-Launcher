@@ -30,6 +30,7 @@ Partial Class SteamHelp
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
+        Me.BackgroundImage = Global.PS2CN_Launcher.My.Resources.Resources.Steam_note_full
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(623, 555)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow

@@ -163,4 +163,7 @@
   <data name="DRsML8j_720_405" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DRsML8j_720_405.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Steam_note_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Steam-note-full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

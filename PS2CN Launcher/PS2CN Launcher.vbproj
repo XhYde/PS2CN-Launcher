@@ -231,6 +231,9 @@
   <ItemGroup>
     <None Include="Resources\VB-bg-SteamHelpIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Steam-note-full.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

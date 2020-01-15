@@ -3,7 +3,7 @@ Imports System.Net.NetworkInformation      'process类，用于获得系统进�
 
 Public Class LauncherForm1
 
-    Const Version As UInt32 = 201912181      '软件版本号，8位日期 + 1位版本。每次【更新】记得【修改】！
+    Const Version As UInt32 = 202001161      '软件版本号，8位日期 + 1位版本。每次【更新】记得【修改】！
 
     '每次更新后，github先提交【更改】，再【同步】到服务器
 
@@ -4394,6 +4394,14 @@ Public Class LauncherForm1
         PanelDir.Visible = False
     End Sub
 
+    Private Sub LabelSteam_MouseHover(sender As Object, e As EventArgs) Handles LabelSteam.MouseHover
+        PanelDir.Visible = True
+    End Sub
+
+    Private Sub LabelSteam_MouseLeave(sender As Object, e As EventArgs) Handles LabelSteam.MouseLeave
+        PanelDir.Visible = False
+    End Sub
+
     Private Sub LabelTestDisplay1_Click(sender As Object, e As EventArgs) Handles LabelTestDisplay1.Click
         LabelTestDisplay1.Visible = False
     End Sub
@@ -4407,7 +4415,4 @@ Public Class LauncherForm1
         LabelTestDisplay2.Visible = True
     End Sub
 
-    Private Sub LabelPlayerName_Click(sender As Object, e As EventArgs) Handles LabelPlayerName.Click
-
-    End Sub
 End Class
