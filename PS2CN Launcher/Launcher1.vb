@@ -3574,7 +3574,7 @@ Public Class LauncherForm1
 
     Private Sub LabelLogo_Click(sender As Object, e As EventArgs) Handles LabelLogo.Click
         Try
-            Process.Start("https://github.com/XhYde/PS2CN-Launcher/wiki")
+            Process.Start("https://ps2cn.lofter.com/post/30900e55_1c769ac2b")
             '打开浏览器，访问论坛
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation, "VisitPS2CN Error")
